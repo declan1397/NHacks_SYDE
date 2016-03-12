@@ -2,6 +2,13 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
+.pic_box .col-md-4 {
+  padding: 0;
+}
+
+.pic_box .col-md-4:hover {
+  padding: 0;
+}
 .navbar {
   margin-bottom: 0;
 }
