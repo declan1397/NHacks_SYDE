@@ -2,6 +2,11 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
+.logo_navbar {
+  float:left;
+  max-height: 50px;
+}
+
 .navbartext {
   color: ##9a2518 !Important;
 }
