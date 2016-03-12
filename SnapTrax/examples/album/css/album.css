@@ -11,6 +11,11 @@ body {
   color: ##9a2518 !Important;
 }
 
+.pic_box img {
+width:100%;
+height: auto;
+}
+
 .pic_box .col-md-4 {
   padding: 0;
 }
