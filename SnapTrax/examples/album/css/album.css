@@ -2,6 +2,11 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
+.hover_dim img:hover {
+  filter:brightness(50%);
+  -webkit-filter:brightness(50%);
+}
+
 .logo_navbar {
   float:left;
   max-height: 50px;
