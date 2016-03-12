@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+       <meta name="generator" content="Codeply">
     <link rel="icon" href="../../favicon.ico">
+
 
     <title>SnapTrax - Save those Special Moments through Music</title>
 
@@ -15,13 +17,20 @@
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+    <link href="../album/css/album.css" rel="stylesheet">
+      <link rel="stylesheet" href="../album/css/styles.css" />
   </head>
 
   <body>
 
-    <div class="navbar-collapse collapse inverse" id="navbar-header">
-        <div class="navbar-collapse collapse inverse"
+<!--
+        <div class="Logo-collapse collapse inverse" id="Logo">
+                <img src="SnapTrax-Logo.svg" width="50" height="50">
+        </div>
+-->
+        
+<!--
+             
       <div class="container-fluid">
         <div class="about">
           <h4>About</h4>
@@ -43,11 +52,39 @@
           &#9776;
         </button>
         <a href="#" class="navbar-brand">
-          <img src="SnapTrax-Logo.svg" width="50" height="50">
+
           </a>
       </div>
     </div>
+-->
 
+      <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-danger" href="#">BRAND</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-collapsible">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#section1">Start</a></li>
+                <li><a href="#section2">Next</a></li>
+                <li><a href="#section3">Then</a></li>
+                <li><a href="#section4">Form</a></li>
+                <li><a href="#section5">More</a></li>
+                <li><a href="#section6">Last</a></li>
+                <li>&nbsp;</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-heart-o fa-lg"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <section class="jumbotron text-xs-center">
       <div class="container">
         <h1 class="jumbotron-heading">Album example</h1>
@@ -130,5 +167,6 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../album/js/scripts.js"></script>
   </body>
 </html>
