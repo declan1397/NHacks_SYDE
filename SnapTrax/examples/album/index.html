@@ -9,7 +9,6 @@
        <meta name="generator" content="Codeply">
     <link rel="icon" href="../../favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-      
 
 
     <title>SnapTrax - Save those Special Moments through Music</title>
@@ -24,17 +23,20 @@
       
       <!-- Soundcloud -->
     <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
-      <script src="http://connect.soundcloud.com/sdk.js"></script>
     
     <script>
-        src="//w.soundcloud.com/player/api.js"
-        
-        SC.initialize({
+    SC.initialize({
         client_id: '391c768744d1bb67c6db0a5e9d324752',
-        });
-        
+    });
 
-      </script>     w
+      
+      function playMusic(){
+        SC.stream("/tracks/293", function(player){
+            player.play();
+        });
+      }
+      
+      </script>     
       
   </head>
 
@@ -44,22 +46,23 @@
         </div>
     </div>
 
-      <nav style="background: #292929;" class="navbar navbar-trans navbar-fixed-top" role="navigation">
+      <nav style="background: #202020;" class="navbar navbar-trans navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-        <img class="logo_navbar" src="logo1_blue.png">
+        <a href="#top_of_the_mountain"><img class="logo_navbar" src="logo1_blue.png"></a>
             <a style="margin-left: 32px" class="navbar-brand  navbartext" href="#top_section">Upload Photo</a>
             <a class="navbar-brand  navbartext" href="#browse_photos">Browse</a>
         </div>
     </div>
 </nav>
-<section>
+<section id="top_of_the_mountain">
         <div style="position: relative; left: 0; top: 0;">
     <video class="banner_vid" width="100%" height="auto" autoplay="true" loop muted>
   <source src="movie_clip.mp4" type="video/mp4">
   <source src="movie_clip.ogg" type="video/ogg">
   Your browser does not support the video tag.
 </video>
+<img class="banner_img" src="snaptrax_blue.png"/>
 <h1 class="banner_header">CAPTURE&nbsp;&nbsp;&nbsp;LISTEN&nbsp;&nbsp;&nbsp;RE-LIVE</h1>
 <p class="banner_par">You snap a picture, you get a track. SnapTrax is the best way to connect your memories to music. Imagine your life as a photo album, now imagine
 your life as a soundtrack. SnapTrax connects these ideas to enhance
@@ -73,40 +76,15 @@ memories.</p>
         <div class="col-md-5"><p class="lead text-muted"><img src="camera2.png" style="width:80%; height:auto; padding-bottom:20px;"></p></div>
         <div class="col-md-2"><img src="arrow1.png" style="width:120%; margin-top:50px; margin-left:14px; transform: rotate(270deg);"></div>
         <div class="col-md-5"><img src="music.png" style="width:60%; margin-top:22px;"></div>
-            <div id="Soundcloud"></div>
-            
-
         
     </div>
-<<<<<<< HEAD
-=======
     <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%; display:none;"/></div>
->>>>>>> origin/master
     </div>
-    <div > <iframe id="iframeBS" width="25%%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124226027&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
- 
-            <script>
-                var newurl;
-                
-                    function newSong(newurl) {
-//                      $('#iframeBS').attr('src', url)
-//               
-//                       $('#iFramePdf').load(function(){
-//                       sendPrint('iframBS')
-//                       })
-                        
-                         
-                        document.getElementById('iframeBS').setAttribute('src', newurl);
-                        
-                //document.getElementById('iframeBS').contentWindow.location.reload();
-                
-                }
-                      </script></div>
+
     <div class="container">
-        <input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off">
+        <form><input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off" value=""/></form>
+
         <div class="row">
-<<<<<<< HEAD
-=======
         <div class="col-md-5">
 
          <!--<button href="#" id="SubmitBtn" onclick="submitUrl()" class="uploadbtn">Upload URL</button>-->
@@ -145,24 +123,16 @@ memories.</p>
                   document.getElementById("icons").src = document.body.appendChild(img); ;
                 }
               </script>-->
->>>>>>> origin/master
 
-        <div class="col-md-5"><button href="#" onclick="submitUrl()" class="uploadbtn">Upload URL
-            </button>
             <script>
                 function submitUrl() {
                     
                     //var URLText = document.getElementById('UrlText').val();
                     var URLText = $('#UrlText').val();
                     $.ajax({url: "http://10.129.253.179:3000/users?imgURL=" + encodeURIComponent(URLText), type:"GET"}).success(
-                        
                         function(data) {
-                            
-                            var newurl =  decodeURIComponent(data);
-                            console.log(newurl);
-                            newSong(newurl);
+                            console.log(data);
                         });
-                    
                 }
             </script>
                 </div>
@@ -177,65 +147,95 @@ memories.</p>
     </section>
 
     <div id="browse_photos" class="album text-muted">
-      <div class="container">
+    <h1 class="browse_header">BROWSE</h1>
         <div class="pic_box">
         <div class="row">
         <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4">
-            <img class="hover_dim" style="position: relative; top: 0.5; left: 0.5;" src="Toronto.jpg" alt="Where is this image?"/>
+            <img class="hover_dim" src="Toronto.jpg" alt="Where is this image?"/>
             <img class="play_button" src="play_button.png" alt="Where is this image?"/>
           </div>
           </div>
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-              <img onclick="playMusic()" src="wildflowers_thmb.jpg" alt="Flowers">
-                 
+              <img src="wildflowers_thmb.jpg" alt="Flowers">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
           </div>
+          </div>
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="girls.jpg" alt="Girls">
+            <img class="hover_dim" src="girls.jpg" alt="Girls">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
           </div>
           </div>
+         
 
 		<div class="row">
+		<div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="skating.jpg" alt="Skating">              
+            <img class="hover_dim" src="skating.jpg" alt="Skating">  
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>            
 			
 
           </div>
+          </div>
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="canada.jpg" alt="Canada">
+            <img class="hover_dim" src="canada.jpg" alt="Canada">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
             
           </div>
+          </div>
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="ski.jpg" alt="skiing">
+            <img class="hover_dim" src="ski.jpg" alt="skiing">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
             
+          </div>
+          </div>
+          </div>
+          <div class="row">
+          <div style="position: relative; left: 0; top: 0;">
+          <div class="col-md-4 hover_dim">
+            <img class="hover_dim" src="Autumn-walk.jpg" alt="autumn-walk">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
+            
+          </div>
+          </div>
+          <div style="position: relative; left: 0; top: 0;">
+          <div class="col-md-4 hover_dim">
+            <img class="hover_dim" src="eggs.jpg" alt="eggs">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
+            
+          </div>
+          </div>
+          <div style="position: relative; left: 0; top: 0;">
+          <div class="col-md-4 hover_dim">
+            <img class="hover_dim" src="ferriswheel.jpg" alt="ferris wheel">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
+            
+          </div>
           </div>
           </div>
           <div class="row">
           <div class="col-md-4 hover_dim">
-            <img src="Autumn-walk.jpg" alt="autumn-walk">
+            <img class="hover_dim" src="kayak.jpg" alt="kayak">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
             
           </div>
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="eggs.jpg" alt="eggs">
+            <img class="hover_dim" src="coffee2.jpeg" alt="coffee mug">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
             
           </div>
-          <div class="col-md-4 hover_dim">
-            <img src="ferriswheel.jpg" alt="ferris wheel">
-            
           </div>
-          </div>
-          <div class="row">
+          <div style="position: relative; left: 0; top: 0;">
           <div class="col-md-4 hover_dim">
-            <img src="kayak.jpg" alt="kayak">
-            
-          </div>
-          <div class="col-md-4 hover_dim">
-            <img src="coffee2.jpeg" alt="coffee mug">
-            
-          </div>
-          <div class="col-md-4 hover_dim">
-            <img src="wedding.jpg" alt="wedding">
+            <img class="hover_dim" src="wedding.jpg" alt="wedding">
+            <img class="play_button" src="play_button.png" alt="Where is this image?"/>
             </div>
+          </div>
           </div>
         </div>
         </div>
