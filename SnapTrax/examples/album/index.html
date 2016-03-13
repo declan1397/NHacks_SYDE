@@ -78,6 +78,10 @@ memories.</p>
 
         
     </div>
+<<<<<<< HEAD
+=======
+    <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%; display:none;"/></div>
+>>>>>>> origin/master
     </div>
     <div > <iframe id="iframeBS" width="25%%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124226027&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
  
@@ -101,6 +105,47 @@ memories.</p>
     <div class="container">
         <input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off">
         <div class="row">
+<<<<<<< HEAD
+=======
+        <div class="col-md-5">
+
+         <!--<button href="#" id="SubmitBtn" onclick="submitUrl()" class="uploadbtn">Upload URL</button>-->
+
+          <form><input type="button" id="Submit" value="Upload URL" class="uploadbtn" onclick="submitUrl()"/></form>
+
+
+            
+            <script type="text/javascript">
+              document.getElementById('Submit').onclick = function() {
+                var val = document.getElementById('UrlText').value,
+                    src = '' + val,
+                    img = document.createElement('img');
+
+                img.src = src;
+                // document.body.appendChild(img);
+
+                document.getElementById('newImage');
+                var oldSrc = 'http://www.grupomagma.net/images/2015/image/image-05.jpg';
+                var newSrc = img.src;
+                $('img[src="' + oldSrc + '"]').attr('src', newSrc);
+                document.getElementById('newImage').setAttribute("style", "display:inline");
+
+
+                // var urlimage = document.getElementById('theImg').getAttribute('src');
+                // urlimage.attributes.
+
+                // update the attribute to the url of the new img
+                //2 dom not updating html
+              }
+              </script>
+
+              <!--<script>
+                function submitUrl() {
+
+                  document.getElementById("icons").src = document.body.appendChild(img); ;
+                }
+              </script>-->
+>>>>>>> origin/master
 
         <div class="col-md-5"><button href="#" onclick="submitUrl()" class="uploadbtn">Upload URL
             </button>
