@@ -23,7 +23,7 @@ body {
   color: #fff;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 90px;
+  font-size: 86px;
   width: 100%;
   text-align: center;
   z-index: 50;
@@ -49,6 +49,7 @@ body {
   left: 0;
   filter:brightness(30%);
   -webkit-filter:brightness(30%);
+  margin-bottom: -7px;
 }
 
 .logo_navbar {
