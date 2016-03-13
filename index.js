@@ -5,7 +5,7 @@ var songs_array = ["77458522", "129525832", "104483298", "237362906", "201282997
 //                 tea music    trop.beach   horror       romantic      summer
 //const soundcloud_base = "http://api.soundcloud.com/tracks/";
 
-var songs_array2 = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77458522&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/129525832&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/104483298&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/237362906&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201282997&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/248413014&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/106906789&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124678474&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"];
+var songs_array2 = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77458522&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/129525832&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/104483298&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/237362906&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201282997&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/248413014&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/106906789&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124678474&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/50889391&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/46466915&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"];
 
 Clarifai.initAPI("360dKCi1RG3RhuSdBffpvRw2p6MOjfkwmm-b6aur", "IPs9EX8l33D-mVA25dkKcF5OuPy1wJm90EaLzCVj");
 
@@ -91,11 +91,23 @@ function commonResultHandler( err, res ) {
 									//globalData = soundcloud_base + songs_array[4];
 									globalData = songs_array2[1];
 								}
+								else if (res["results"][i].result["tag"]["classes"][j] == 'togetherness')
+								{
+									console.log('we made it');
+									//globalData = soundcloud_base + songs_array[4];
+									globalData = songs_array2[7];
+								}
 								else if (res["results"][i].result["tag"]["classes"][j] == 'summer')
 								{
 									console.log('we made it');
 									//globalData = soundcloud_base + songs_array[4];
 									globalData = songs_array2[4];
+								}
+								else if (res["results"][i].result["tag"]["classes"][j] == 'boat')
+								{
+									console.log('we made it');
+									//globalData = soundcloud_base + songs_array[4];
+									globalData = songs_array2[8];
 								}
 								else if (res["results"][i].result["tag"]["classes"][j] == 'love')
 								{
@@ -109,11 +121,11 @@ function commonResultHandler( err, res ) {
 									//globalData = soundcloud_base + songs_array[4];
 									globalData = songs_array2[6];
 								}
-								else if (res["results"][i].result["tag"]["classes"][j] == 'togetherness')
+								else if (res["results"][i].result["tag"]["classes"][j] == 'competition')
 								{
 									console.log('we made it');
 									//globalData = soundcloud_base + songs_array[4];
-									globalData = songs_array2[7];
+									globalData = songs_array2[9];
 								}
 							}
 							//' probs='+res["results"][i].result["tag"]["probs"][1] )
