@@ -49,6 +49,12 @@ height: auto;
     
 }
 
+
+.navbar-brand:focus, .navbar-brand:hover {
+  border-top:solid #DC3522 2px;
+}
+
+
 .about {
   float: left;
   max-width: 30rem;
