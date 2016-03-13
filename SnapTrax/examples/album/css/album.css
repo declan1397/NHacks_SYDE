@@ -9,6 +9,14 @@ body {
 .hover_dim:hover {
 }
 
+.browse_header {
+  text-align: center;
+  padding-bottom: 2%;
+  color: #FCEEB9;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
 .play_button:hover{
   opacity: 1;
   cursor: pointer;
@@ -202,9 +210,8 @@ height: auto;
 
 .album {
   min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #292929;
+  padding-top: 2rem;
+  background-color: #202020;
 }
 
 .card {
