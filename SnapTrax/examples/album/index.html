@@ -78,12 +78,51 @@ memories.</p>
         <div class="col-md-5"><img src="music.png" style="width:60%; margin-top:22px;"></div>
         
     </div>
+    <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%"/></div>
     </div>
+
     <div class="container">
-        <input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off">
+        <form><input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off" value=""/></form>
+
         <div class="row">
-        <div class="col-md-5"><button href="#" onclick="submitUrl()" class="uploadbtn">Upload URL
-            </button>
+        <div class="col-md-5">
+
+         <!--<button href="#" id="SubmitBtn" onclick="submitUrl()" class="uploadbtn">Upload URL</button>-->
+
+          <form><input type="button" id="Submit" value="Upload URL" class="uploadbtn" onclick="submitUrl()"/></form>
+
+
+            
+            <script type="text/javascript">
+              document.getElementById('Submit').onclick = function() {
+                var val = document.getElementById('UrlText').value,
+                    src = '' + val,
+                    img = document.createElement('img');
+
+                img.src = src;
+                // document.body.appendChild(img);
+
+                document.getElementById('newImage');
+                var oldSrc = 'http://www.grupomagma.net/images/2015/image/image-05.jpg';
+                var newSrc = img.src;
+                $('img[src="' + oldSrc + '"]').attr('src', newSrc)
+
+
+                // var urlimage = document.getElementById('theImg').getAttribute('src');
+                // urlimage.attributes.
+
+                // update the attribute to the url of the new img
+                //2 dom not updating html
+              }
+              </script>
+
+              <!--<script>
+                function submitUrl() {
+
+                  document.getElementById("icons").src = document.body.appendChild(img); ;
+                }
+              </script>-->
+
             <script>
                 function submitUrl() {
                     
