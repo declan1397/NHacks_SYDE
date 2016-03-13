@@ -113,7 +113,7 @@ height: auto;
 
 
 .navbar-brand:focus, .navbar-brand:hover {
-  border-top:solid #29A3A3 2px;
+  border-top:solid #61E8D2 2px;
 }
 
 
@@ -135,7 +135,7 @@ height: auto;
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-bottom: 0;
-  background-color: #E3D4A5;
+  background: repeating-linear-gradient( 135deg, #61E8D2, #61E8D2 60px, #1CC6AB 60px, #1CC6AB 120px)
 }
 
 .jumbotron p:last-child {
