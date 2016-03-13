@@ -78,7 +78,7 @@ memories.</p>
         <div class="col-md-5"><img src="music.png" style="width:60%; margin-top:22px;"></div>
         
     </div>
-    <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%"/></div>
+    <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%; display:none;"/></div>
     </div>
 
     <div class="container">
@@ -105,7 +105,8 @@ memories.</p>
                 document.getElementById('newImage');
                 var oldSrc = 'http://www.grupomagma.net/images/2015/image/image-05.jpg';
                 var newSrc = img.src;
-                $('img[src="' + oldSrc + '"]').attr('src', newSrc)
+                $('img[src="' + oldSrc + '"]').attr('src', newSrc);
+                document.getElementById('newImage').setAttribute("style", "display:inline");
 
 
                 // var urlimage = document.getElementById('theImg').getAttribute('src');
