@@ -23,9 +23,12 @@
       
       <!-- Soundcloud -->
     <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+      <script src="http://connect.soundcloud.com/sdk.js"></script>
     
     <script>
-    SC.initialize({
+        src="//w.soundcloud.com/player/api.js"
+        
+        SC.initialize({
         client_id: '391c768744d1bb67c6db0a5e9d324752',
     });
 
@@ -76,15 +79,37 @@ memories.</p>
         <div class="col-md-5"><p class="lead text-muted"><img src="camera2.png" style="width:80%; height:auto; padding-bottom:20px;"></p></div>
         <div class="col-md-2"><img src="arrow1.png" style="width:120%; margin-top:50px; margin-left:14px; transform: rotate(270deg);"></div>
         <div class="col-md-5"><img src="music.png" style="width:60%; margin-top:22px;"></div>
+            <div id="Soundcloud"></div>
+            
+
         
     </div>
-    <div id="icon"><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%; display:none;"/></div>
+
+    
     </div>
-
+    <div ><span><img id="newImage" src="http://www.grupomagma.net/images/2015/image/image-05.jpg" style="width:50%; display:none;"/></span> <iframe id="iframeBS" width="25%%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124226027&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+ 
+            <script>
+                var newurl;
+                
+                    function newSong(newurl) {
+//                      $('#iframeBS').attr('src', url)
+//               
+//                       $('#iFramePdf').load(function(){
+//                       sendPrint('iframBS')
+//                       })
+                        
+                         
+                        document.getElementById('iframeBS').setAttribute('src', newurl);
+                        
+                //document.getElementById('iframeBS').contentWindow.location.reload();
+                
+                }
+                      </script></div>
     <div class="container">
-        <form><input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off" value=""/></form>
-
+        <input class="urlUpload" id="UrlText" type="text" placeholder="Paste a URL here" autocomplete="off">
         <div class="row">
+
         <div class="col-md-5">
 
          <!--<button href="#" id="SubmitBtn" onclick="submitUrl()" class="uploadbtn">Upload URL</button>-->
@@ -106,7 +131,7 @@ memories.</p>
                 var oldSrc = 'http://www.grupomagma.net/images/2015/image/image-05.jpg';
                 var newSrc = img.src;
                 $('img[src="' + oldSrc + '"]').attr('src', newSrc);
-                document.getElementById('newImage').setAttribute("style", "display:inline;width: 50%");
+                document.getElementById('newImage').setAttribute("style", "display:inline; width: 25%;margin-top: -20%;");
 
 
                 // var urlimage = document.getElementById('theImg').getAttribute('src');
@@ -131,7 +156,10 @@ memories.</p>
                     var URLText = $('#UrlText').val();
                     $.ajax({url: "http://10.129.253.179:3000/users?imgURL=" + encodeURIComponent(URLText), type:"GET"}).success(
                         function(data) {
-                            console.log(data);
+                            
+                            var newurl =  decodeURIComponent(data);
+                            console.log(newurl);
+                            newSong(newurl);
                         });
                 }
             </script>
