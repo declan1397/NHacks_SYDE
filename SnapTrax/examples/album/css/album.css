@@ -57,7 +57,7 @@ body {
 }
 
 .navbartext {
-  color: #0099FF !Important;
+  color: ##9a2518 !Important;
 }
 
 .pic_box img {
@@ -95,7 +95,7 @@ height: auto;
 
 
 .navbar-brand:focus, .navbar-brand:hover {
-  border-top:solid #0099FF 2px;
+  border-top:solid #29A3A3 2px;
 }
 
 
@@ -117,7 +117,7 @@ height: auto;
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-bottom: 0;
-  background-color: #0099FF;
+  background-color: #E3D4A5;
 }
 
 .jumbotron p:last-child {
@@ -133,9 +133,9 @@ height: auto;
 }
 
 .uploadbtn {
-    color: smokewhite;
-    background-color: #990033;
-    border-color: #990033;
+    color: #E3D4A5;
+    background-color: #DC3522;
+    border-color: #DC3522;
     display: inline-block;
     padding: .375rem 1rem;
     margin-top: 29px;
@@ -156,7 +156,7 @@ height: auto;
 }
 
 .uploadbtn:hover{
-  color:##0099FF;
+  color:#E3D4A5;
   background-color: #C6301F;
   border-color:#374140;
   text-decoration: none;
