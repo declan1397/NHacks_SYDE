@@ -2,9 +2,18 @@ body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
 }
 
-.hover_dim img:hover {
+.hover_dim:hover {
   filter:brightness(50%);
   -webkit-filter:brightness(50%);
+}
+
+.play_button {
+  max-width: 50%;
+  max-height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 25%;
 }
 
 .logo_navbar {
@@ -136,7 +145,7 @@ height: auto;
   min-height: 50rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #f7f7f7;
+  background-color: #292929;
 }
 
 .card {
